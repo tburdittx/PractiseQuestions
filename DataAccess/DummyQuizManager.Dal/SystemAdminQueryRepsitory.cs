@@ -12,11 +12,11 @@ using PracticeQuestions.Dal.Interface;
 
 namespace PracticeQuestions.Dal
 {
-    class SystemAdminQueryRepsitory : QueryRepositoryBase, ISystemAdminQueryRepository
+   public class SystemAdminQueryRepository : QueryRepositoryBase, ISystemAdminQueryRepository
     {
         private const string uspSystemAdminRead = "[dbo].[uspSystemAdminRead]";
         private const string uspSystemAdminReadAll = "[dbo].[uspSystemAdminReadAll]";
-        public SystemAdminQueryRepsitory(IConfiguration configuration) : base(configuration)
+        public SystemAdminQueryRepository(IConfiguration configuration) : base(configuration)
         {
         }
 

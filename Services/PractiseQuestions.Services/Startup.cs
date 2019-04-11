@@ -27,6 +27,9 @@ namespace PracticeQuestions.Services
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IQuestionsQueryRepository, QuestionsQueryRepository>();
+            services.AddTransient<IUserQueryRepository, UserQueryRepository>();
+            services.AddTransient<ISystemAdminQueryRepository, SystemAdminQueryRepository>();
+            services.AddTransient<ICategoryQueryRepository, CategoryQueryRepository>();
             services.AddMvc();
 
             services.AddSwaggerGen(c=> {
