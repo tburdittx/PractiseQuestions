@@ -80,6 +80,11 @@
     <Build Include="dbo\StoredProcedures\uspSystemAdminCreate.sql" />
     <Build Include="dbo\StoredProcedures\uspSystemAdminReadAll.sql" />
     <Build Include="dbo\StoredProcedures\uspSystemAdminReadById.sql" />
+    <Build Include="dbo\StoredProcedures\uspUserReadAll.sql" />
+    <Build Include="dbo\StoredProcedures\uspUserCreate.sql" />
+    <Build Include="dbo\StoredProcedures\uspUserDelete.sql" />
+    <Build Include="dbo\StoredProcedures\uspUserRead.sql" />
+    <Build Include="dbo\StoredProcedures\uspUserUpdate.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\dbo.Categories.sql" />
