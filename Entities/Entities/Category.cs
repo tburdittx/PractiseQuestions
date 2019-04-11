@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeQuestions.Dal
+namespace Entities
 {
-   public class QueryBaseRepository
+    public class Category:EntityBase
     {
+        public string Name { get; set; }
     }
 }

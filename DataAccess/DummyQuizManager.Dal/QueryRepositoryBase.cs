@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 
-namespace DummyQuizManager.Dal
+namespace PracticeQuestions.Dal
 {
     public class QueryRepositoryBase:QueryBaseRepository
     {
         private readonly IConfiguration configuration;
 
-        private const string DbName = "DummyQuizManager";
+        private const string DbName = "PracticeQuestions";
 
         public QueryRepositoryBase(IConfiguration configuration)
         {

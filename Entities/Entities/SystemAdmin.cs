@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class SystemAdmin:EntityBase
+    public class SystemAdmin:EntityBase
     {
         public long UserId { get; set; }
         public DateTime StartDate { get; set; }

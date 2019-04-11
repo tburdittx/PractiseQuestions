@@ -36,9 +36,8 @@ namespace PractiseQuestions.WebApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public HttpResponseMessage httpClient()
+        public HttpResponseMessage httpClient(string url)
         {
-
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:40300/api/");
@@ -46,7 +45,7 @@ namespace PractiseQuestions.WebApp.Controllers
                 //Called Member default GET All records  
                 //GetAsync to send a GET request   
                 // PutAsync to send a PUT request  
-                var responseTask = client.GetAsync("questions/readallquestions");
+                var responseTask = client.GetAsync(url);
                 responseTask.Wait();
 
                 //To store result of web api response.
@@ -73,8 +72,8 @@ namespace PractiseQuestions.WebApp.Controllers
                 //To store result of web api response.   
                 var result = responseTask.Result;
                 */
-
-                var result = this.httpClient();
+                string readAllQuestionsUrl = "questions/readallquestions";
+                var result = this.httpClient(readAllQuestionsUrl);
 
                 //If success received   
                 if (result.IsSuccessStatusCode)

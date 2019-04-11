@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DummyQuizManager.Dal.Interface;
+using PracticeQuestions.Dal.Interface;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DummyQuizManager.Service.Controllers
+namespace PracticeQuestions.Service.Controllers
 {
     [Route("api/[controller]")]
     public class QuestionsController : ControllerBase

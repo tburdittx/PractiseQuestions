@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICategoryCommandRepository.cs" />
+    <Compile Include="ICategoryQueryRepository.cs" />
     <Compile Include="ICommandRepositoryBase.cs" />
     <Compile Include="IQueryRepositoryBase.cs" />
     <Compile Include="IQuestionsCommandRepository.cs" />
     <Compile Include="IQuestionsQueryRepository.cs" />
+    <Compile Include="ISystemAdminCommandRepository.cs" />
+    <Compile Include="ISystemAdminQueryRepository.cs" />
+    <Compile Include="IUserCommandRepository.cs" />
+    <Compile Include="IUserQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

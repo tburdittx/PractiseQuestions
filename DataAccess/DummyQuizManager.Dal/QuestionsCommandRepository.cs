@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-using DummyQuizManager.Dal.Interface;
+using PracticeQuestions.Dal.Interface;
 using Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace DummyQuizManager.Dal
+namespace PracticeQuestions.Dal
 {
     public class QuestionsCommandRepository : CommandRepositoryBase//, IQuestionsCommandRepository
     {

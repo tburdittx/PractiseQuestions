@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 
-namespace DummyQuizManager.Dal.Interface
+namespace PracticeQuestions.Dal.Interface
 {
     public interface IQuestionsQueryRepository:IQueryRepositoryBase<Questions>
     {

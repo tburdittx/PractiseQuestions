@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace DummyQuizManager.Services
+namespace PracticeQuestions.Services
 {
     public class Program
     {

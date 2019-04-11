@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-namespace DummyQuizManager.Dal
+namespace PracticeQuestions.Dal
 {
     public class CommandRepositoryBase: CommandBaseRepository
     {
         private readonly Lazy<IConfiguration> configuration;
 
-        private const string DbName = "DummyQuizManager";
+        private const string DbName = "PracticeQuestions";
 
         public CommandRepositoryBase(Lazy<IConfiguration> configuration)
         {

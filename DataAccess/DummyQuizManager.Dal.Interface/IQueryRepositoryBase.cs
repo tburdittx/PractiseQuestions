@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DummyQuizManager.Dal.Interface
+namespace PracticeQuestions.Dal.Interface
 {
     public interface IQueryRepositoryBase<T> where T : new()
     {

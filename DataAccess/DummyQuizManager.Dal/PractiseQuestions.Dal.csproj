@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryCommandRepository.cs" />
+    <Compile Include="CategoryQueryRepository.cs" />
     <Compile Include="CommandBaseRepository.cs" />
     <Compile Include="CommandRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +75,10 @@
     <Compile Include="QueryRepositoryBase.cs" />
     <Compile Include="QuestionsCommandRepository.cs" />
     <Compile Include="QuestionsQueryRepository.cs" />
+    <Compile Include="SystemAdminCommandRepsitory.cs" />
+    <Compile Include="SystemAdminQueryRepsitory.cs" />
+    <Compile Include="UserCommandRepository.cs" />
+    <Compile Include="UserQueryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entities\Entities\Entities.csproj">

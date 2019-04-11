@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DummyQuizManager.Dal.Interface;
+using PracticeQuestions.Dal.Interface;
 
-namespace DummyQuizManager.Dal
+namespace PracticeQuestions.Dal
 {
   public  abstract class CommandBaseRepository    
     {

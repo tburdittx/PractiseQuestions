@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities;
 
 namespace PracticeQuestions.Dal.Interface
 {
-    public interface ICommandRepositoryBase<T> where T:new()
+    public interface ICategoryCommandRepository:ICommandRepositoryBase<Category>
     {
-        Task<long> Create(T entity);
-        Task<long> Delete(long id);
-        Task<long> Update(T entity);
     }
 }
