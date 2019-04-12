@@ -33,6 +33,13 @@ namespace PracticeQuestions.Service.Controllers
             return result;
         }
 
+        [HttpGet("ReadQuestionByCategoryId/{id}")]
+        public Task<IEnumerable<Questions>>ReadQuestionsByCategoryId(int id)
+        {
+            var result = this.QuestionsQueryRepository.ReadQuestionsByCategoryId(id);
+            return result;
+        }
+
         //// GET api/values/5
         //[HttpGet("{id}")]
         //public ActionResult<string> Get(int id)

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Entities;
 using Microsoft.AspNetCore.Mvc;
 using WebAppLogIn.Models;
 
@@ -11,9 +12,37 @@ namespace WebAppLogIn.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult GetAllQuestionsByCategoryId()
+        {
+            // var result = GetAllQuestions();
+            IEnumerable<QuestionsViewModel> questions;
+            int id = 1;
+            string readAllQuestionsUrl = $"questions/ReadQuestionByCategoryId/{id}";
+            var result = this.httpClient(readAllQuestionsUrl);
+
+            //If success received   
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IList<QuestionsViewModel>>();
+                readTask.Wait();
+
+                questions = readTask.Result;
+            }
+            else
+            {
+                //Error response received   
+                questions = Enumerable.Empty<QuestionsViewModel>();
+                ModelState.AddModelError(string.Empty, "Server error try after some time.");
+            }
+
+         
+
+            return this.View("Questions",questions);
+        }
+
         public IActionResult Index()
         {
-            GetMembers();
+            
             return View();
         }
 
@@ -54,9 +83,9 @@ namespace WebAppLogIn.Controllers
             }
         }
 
-        public ActionResult GetMembers()
+        public IEnumerable<QuestionsViewModel> GetAllQuestions()
         {
-            IEnumerable<QuestionsViewModel> members = null;
+            IEnumerable<QuestionsViewModel> questions = null;
 
             using (var client = new HttpClient())
             {
@@ -81,16 +110,16 @@ namespace WebAppLogIn.Controllers
                     var readTask = result.Content.ReadAsAsync<IList<QuestionsViewModel>>();
                     readTask.Wait();
 
-                    members = readTask.Result;
+                    questions = readTask.Result;
                 }
                 else
                 {
                     //Error response received   
-                    members = Enumerable.Empty<QuestionsViewModel>();
+                    questions = Enumerable.Empty<QuestionsViewModel>();
                     ModelState.AddModelError(string.Empty, "Server error try after some time.");
                 }
             }
-            return View(members);
+           return questions;
         }
     }
 }

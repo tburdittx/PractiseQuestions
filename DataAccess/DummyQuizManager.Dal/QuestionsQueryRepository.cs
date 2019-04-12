@@ -15,6 +15,7 @@ namespace PracticeQuestions.Dal
 
         private const string uspQuestionsReadAll = "[dbo].[uspQuestionsReadAll]";
         private const string uspQuestionsRead = "[dbo].[uspQuestionsReadById]";
+        private const string uspQuestionsReadByCategoryId = "[dbo].[uspQuestionsReadByCategoryId]";
 
         public QuestionsQueryRepository(IConfiguration configuration) : base(configuration)
         {
@@ -39,6 +40,18 @@ namespace PracticeQuestions.Dal
             using (var connection = new SqlConnection(DbConnectionString))
             {
                 result = await connection.QueryAsync<Questions>(uspQuestionsReadAll);
+            }
+            return result;
+        }
+
+        public async Task<IEnumerable<Questions>> ReadQuestionsByCategoryId(long id)
+        {
+            IEnumerable<Questions> result;
+
+            using(var connection=new SqlConnection(DbConnectionString))
+            {
+                result = await connection.QueryAsync<Questions>(uspQuestionsReadByCategoryId, new { categoryId = id },
+                commandType: CommandType.StoredProcedure);
             }
             return result;
         }

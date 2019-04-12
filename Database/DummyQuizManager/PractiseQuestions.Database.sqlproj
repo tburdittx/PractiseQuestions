@@ -85,6 +85,7 @@
     <Build Include="dbo\StoredProcedures\uspUserDelete.sql" />
     <Build Include="dbo\StoredProcedures\uspUserRead.sql" />
     <Build Include="dbo\StoredProcedures\uspUserUpdate.sql" />
+    <Build Include="dbo\StoredProcedures\uspQuestionsReadByCategoryId.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\dbo.Categories.sql" />

@@ -9,5 +9,6 @@ namespace PracticeQuestions.Dal.Interface
 {
     public interface IQuestionsQueryRepository:IQueryRepositoryBase<Questions>
     {
+        Task<IEnumerable<Questions>> ReadQuestionsByCategoryId(long id);
     }
 }
