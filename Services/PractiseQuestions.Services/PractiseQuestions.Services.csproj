@@ -15,7 +15,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
@@ -25,6 +28,7 @@
     <ProjectReference Include="..\..\DataAccess\DummyQuizManager.Dal.Interface\PractiseQuestions.Dal.Interface.csproj" />
     <ProjectReference Include="..\..\DataAccess\DummyQuizManager.Dal\PractiseQuestions.Dal.csproj" />
     <ProjectReference Include="..\..\Entities\Entities\Entities.csproj" />
+    <ProjectReference Include="..\..\WebApp\WebAppLogIn\WebAppLogIn.csproj" />
   </ItemGroup>
 
 </Project>

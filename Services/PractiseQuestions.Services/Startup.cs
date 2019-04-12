@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using WebAppLogIn.Data;
 
 namespace PracticeQuestions.Services
 {
@@ -26,15 +29,23 @@ namespace PracticeQuestions.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddMvc()
+                .AddJsonOptions(o => { });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("V1", new Info { Title = "", Version = "", Description = "", License = new License { } });
+            });
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddTransient<IQuestionsQueryRepository, QuestionsQueryRepository>();
             services.AddTransient<IUserQueryRepository, UserQueryRepository>();
             services.AddTransient<ISystemAdminQueryRepository, SystemAdminQueryRepository>();
             services.AddTransient<ICategoryQueryRepository, CategoryQueryRepository>();
-            services.AddMvc();
-
-            services.AddSwaggerGen(c=> {
-                c.SwaggerDoc("V1", new Info { Title = "", Version = "", Description = "", License = new License { } });
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +56,7 @@ namespace PracticeQuestions.Services
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvc();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
